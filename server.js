@@ -3,6 +3,7 @@ const express = require("express")
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 require('dotenv').config()
+const routes = require('./controllers/placeholder')
 
 //app init
 const app = express()
@@ -23,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 const PORT = process.env.PORT
 
 //routes
-
+app.use('/placeholder',routes)
 
 //response phrase
 app.listen(PORT, console.log(`listening on port ${PORT}`))
