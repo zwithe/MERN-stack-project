@@ -5,7 +5,11 @@ const hotelSchema = new mongoose.Schema({
         type: String,
         required
     },
-    stayDuration: {
+    stayStartDate: {
+        type: Date,
+        required
+    },
+    stayEndDate: {
         type: Date,
         required
     },
