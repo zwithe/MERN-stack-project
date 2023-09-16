@@ -7,7 +7,7 @@
     "mongoose": "^7.5.2"
   },
   "scripts": {
-    "dev": "npx nodemon index.js -e .js,.jsx"
+    "dev": "npx nodemon server.js -e .js,.jsx"
   },
   "name": "mern-stack-project",
   "description": "",
