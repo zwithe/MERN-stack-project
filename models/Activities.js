@@ -27,3 +27,5 @@ const activtiesSchema = new mongoose.Schema({
         type: Number
     }
 })
+
+module.exports = mongoose.model('Activities', activtiesSchema)
