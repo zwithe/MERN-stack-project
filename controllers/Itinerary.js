@@ -5,6 +5,10 @@ router.get('/', (req,res) =>{
     res.render('index')
 })
 
+router.get('/summary', (req,res)=>{
+    res.render('tripSummary')
+})
+
 //create
 
 //delete

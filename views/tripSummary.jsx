@@ -1,14 +1,14 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function Index (){
+function tripSummary (){
     return(
         <Default>
             <h1>
-                Homepage
+                Trip Summary Placehoder
             </h1>
         </Default>
     )
 }
 
-module.exports = Index
+module.exports = tripSummary
