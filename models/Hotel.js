@@ -3,27 +3,22 @@ const mongoose = require('mongoose')
 const hotelSchema = new mongoose.Schema({
     name: {
         type: String,
-        required
     },
     stayStartDate: {
         type: Date,
-        required
+        // required
     },
     stayEndDate: {
         type: Date,
-        required
-    },
-    lon: {
-        type: Number,
-        required
-    },
-    lat: {
-        type: Number,
-        required
+        // required
     },
     price: {
         type: Number
+    },
+    adress:{
+        type: String,
+        // required: true
     }
 })
 
-module.exports = mongoose.model('Hotels',hotelSchema)
+module.exports = mongoose.model('Hotel', hotelSchema)

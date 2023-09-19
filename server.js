@@ -4,6 +4,8 @@ const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const itineraryRoutes = require('./controllers/Itinerary')
+const hotelController = require('./controllers/Hotel')
+const activitesController = require('./controllers/Activity')
 
 //app init
 const app = express()
@@ -25,6 +27,8 @@ const PORT = process.env.PORT
 
 //routes
 app.use('/itinerary',itineraryRoutes)
+app.use('/hotels', hotelController)
+app.use('/activities', activitesController)
 
 //response phrase
 app.listen(PORT, console.log(`listening on port ${PORT}`))
