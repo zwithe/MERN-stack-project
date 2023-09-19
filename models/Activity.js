@@ -2,17 +2,9 @@ const { default: mongoose } = require("mongoose");
 const Day = require('./Day')
 
 
-const activtiesSchema = new mongoose.Schema({
+const activtySchema = new mongoose.Schema({
     name:{
         type: String,
-        required: true
-    },
-    lat:{
-       type: Number, 
-       required: true
-    },
-    lon:{
-        type: Number,
         required: true
     },
     type:{
@@ -25,7 +17,11 @@ const activtiesSchema = new mongoose.Schema({
     },
     duration:{
         type: Number
+    },
+    adress:{
+        type: String,
+        required: true
     }
 })
 
-module.exports = mongoose.model('Activities', activtiesSchema)
+module.exports = mongoose.model('Activity', activtySchema)
