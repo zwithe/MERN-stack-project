@@ -1,6 +1,6 @@
 router = require('express').Router()
-Hotels = require('../models/Hotels')
-Activities = require('../models/Activities')
+Hotels = require('../models/Hotel')
+Activities = require('../models/Activity')
 
 //render data to the screen
 router.get('/', (req,res) =>{
