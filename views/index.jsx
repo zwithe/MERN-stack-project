@@ -8,7 +8,6 @@ function Index ({hotel}){
             <h1>
                 Hotel Listing
             </h1>
-
         </Default>
     )
 }

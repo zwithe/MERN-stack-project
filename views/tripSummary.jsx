@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function tripSummary (){
+function tripSummary ({hotel, activity}){
     return(
         <Default>
             <header>
