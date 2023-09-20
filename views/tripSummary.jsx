@@ -20,16 +20,6 @@ function tripSummary ({hotel, activity}){
                     <p>Description: Explore the city's landmarks.</p>
                 </div>
                 </div>
-                <div className="form-container">
-                <h2>Add New Data</h2>
-                <form>
-                    <input type="text" placeholder="Hotel Name"/>
-                    <input type="text" placeholder="Location"/>
-                    <input type="date" placeholder="Check-In Date"/>
-                    <input type="date" placeholder="Check-Out Date"/>
-                    <input type="submit" className="button" value="Add Hotel"/>
-                </form>
-                </div>
             </div>
         </Default>
     )
