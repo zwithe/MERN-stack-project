@@ -9,7 +9,7 @@ router.get('/', (req,res) =>{
 })
 
 router.get('/summary', (req,res)=>{
-    res.render('tripSummary')
+    res.render('tripSummary', {hotel: Hotel})
 })
 
 //create

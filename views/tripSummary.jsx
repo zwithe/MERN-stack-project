@@ -12,8 +12,8 @@ function tripSummary ({hotel, activity}){
                 <div className="card">
                     <h2>{hotel.name}</h2>
                     <p>Location: {hotel.address}</p>
-                    <p>Check-In Date: {}</p>
-                    <p>Check-Out Date: 2023-10-18</p>
+                    <p>Check-In Date: {hotel.stayStartDate}</p>
+                    <p>Check-Out Date: {hotel.stayEndDate}</p>
                 </div>
                 <div className="card">
                     <h2>Activity Name</h2>

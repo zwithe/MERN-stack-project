@@ -9,22 +9,22 @@ function Default(html) {
       <link rel="stylesheet" href="/main.css"></link>
     </head>
     <body>
-      <nav class="navbar navbar-expand-xxl bg-dark navbar-dark py-3 justify-content-between justify-content-xxl-start">
-        <div class="container-fluid">
-          <a class="navbar-brand"><h1>Trip Planner</h1></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#idCollapse">
-            <span class="navbar-toggler-icon"></span>
+      <nav className="navbar navbar-expand-xxl bg-dark navbar-dark py-3 justify-content-between justify-content-xxl-start">
+        <div className="container-fluid">
+          <a className="navbar-brand"><h1>Trip Planner</h1></a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#idCollapse">
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="idCollapse">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/"><h2>Home</h2></a>
+          <div className="collapse navbar-collapse" id="idCollapse">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link" href="/"><h2>Home</h2></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="itinerary/summary"><h2>Trip Summary</h2></a>
+              <li className="nav-item">
+                <a className="nav-link" href="itinerary/summary"><h2>Trip Summary</h2></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="itinerary"><h2>Placeholder</h2></a>
+              <li className="nav-item">
+                <a className="nav-link" href="itinerary"><h2>Placeholder</h2></a>
               </li>
             </ul>
           </div>
