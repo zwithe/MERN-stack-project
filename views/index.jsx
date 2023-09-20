@@ -1,12 +1,14 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function Index (){
+function Index ({hotel}){
+
     return(
         <Default>
             <h1>
-                Homepage
+                Hotel Listing
             </h1>
+
         </Default>
     )
 }
