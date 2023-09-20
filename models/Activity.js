@@ -18,7 +18,7 @@ const activtySchema = new mongoose.Schema({
     duration:{
         type: Number
     },
-    adress:{
+    address:{
         type: String,
         required: true
     }

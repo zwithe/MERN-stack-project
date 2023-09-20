@@ -15,10 +15,11 @@ const hotelSchema = new mongoose.Schema({
     price: {
         type: Number
     },
-    adress:{
+    address:{
         type: String,
         // required: true
     }
 })
 
-module.exports = mongoose.model('Hotel', hotelSchema)
+const Hotel = mongoose.model('Hotel', hotelSchema)
+module.exports = Hotel

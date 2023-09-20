@@ -5,22 +5,40 @@ function Default(html) {
     <html>
     <head>
       <title>Default</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossOrigin="anonymous" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossOrigin="anonymous" />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+      <link rel="stylesheet" href="/main.css"></link>
     </head>
     <body>
-      <div className="wrapper">
-        <header>
-          <h2><a href="/itinerary">Home</a></h2>
-          <h2><a href="/itinerary/summary">Trip Summary</a></h2>
-        </header>
-        <div className="container">
-          {html.children}
+      <nav className="navbar navbar-expand-xxl bg-dark navbar-dark py-3 justify-content-between justify-content-xxl-start">
+        <div className="container-fluid">
+          <a className="navbar-brand"><h1>Trip Planner</h1></a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#idCollapse">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="idCollapse">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link" href="/"><h2>Home</h2></a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="itinerary/summary"><h2>Trip Summary</h2></a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="itinerary"><h2>Placeholder</h2></a>
+              </li>
+            </ul>
+          </div>
         </div>
+      </nav>
+      <div className="container">
+          {html.children}
       </div>
+     
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 
-    </html>
+  </html>
   )
 }
 

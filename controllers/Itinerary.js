@@ -1,14 +1,15 @@
 router = require('express').Router()
-Hotels = require('../models/Hotels')
-Activities = require('../models/Activities')
+Hotel = require('../models/Hotel')
+Activity = require('../models/Activity')
 
 //render data to the screen
 router.get('/', (req,res) =>{
-    res.render('index')
+    console.log({Hotel})
+    res.render('index', {hotel: Hotel})
 })
 
 router.get('/summary', (req,res)=>{
-    res.render('tripSummary')
+    res.render('tripSummary', {hotel: Hotel})
 })
 
 //create

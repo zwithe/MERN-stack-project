@@ -3,8 +3,8 @@ const Activity = require('./Activity')
 
 const daySchema = new mongoose.Schema({
     date:{
-        type: String,
-        required
+        type: Date,
+        required: true
     },
     activities: [{
         type: mongoose.Schema.Types.ObjectId,
