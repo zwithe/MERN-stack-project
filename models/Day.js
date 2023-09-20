@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const daySchema = new mongoose.Schema({
     date:{
         type: String,
-        required
+        required: true
     },
     Activity:{
         type: []
