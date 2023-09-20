@@ -17,13 +17,13 @@ function Default(html) {
           <div class="collapse navbar-collapse" id="idCollapse">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/"><h2>Home</h2></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="itinerary/summary"><h2>Trip Summary</h2></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="itinerary"><h2>Placeholder</h2></a>
               </li>
             </ul>
           </div>
