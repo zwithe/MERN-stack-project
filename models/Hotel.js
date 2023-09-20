@@ -15,7 +15,7 @@ const hotelSchema = new mongoose.Schema({
     price: {
         type: Number
     },
-    adress:{
+    address:{
         type: String,
         // required: true
     }
