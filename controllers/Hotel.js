@@ -10,7 +10,7 @@ router.get('/', async (req, res) =>{
 
 // GET seed data
 router.get('/seed', async (req, res) => {
-    await Promise.all(Hotel.deleteMany())
+    // await Promise.all(Hotel.deleteMany())
     const hotels = await Hotel.insertMany(HotelSeedData)
     res.send(hotels)
 })

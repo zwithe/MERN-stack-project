@@ -12,6 +12,10 @@ router.get('/summary', (req,res)=>{
     res.render('tripSummary')
 })
 
+router.get('/create', (req,res)=>{
+    res.render('tripCreator', {hotel: Hotel})
+})
+
 //create
 
 //delete
