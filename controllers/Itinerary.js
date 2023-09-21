@@ -16,10 +16,6 @@ router.get('/summary/:id', async (req,res)=>{
     res.render('tripSummary', {itinerary})
 })
 
-router.get('/create', (req,res)=>{
-    res.render('tripCreator', {hotel: Hotel})
-})
-
 //GET create
 router.get('/create', async (req,res)=>{
     const hotels = await Hotels.find()
