@@ -1,24 +1,43 @@
 router = require('express').Router()
 Hotel = require('../models/Hotel')
 Activity = require('../models/Activity')
+Itinerary = require('../models/Itinerary')
 
-//render data to the screen
+// GET page of all itineraries
 router.get('/', (req,res) =>{
-    res.render('index', {hotel: Hotel})
+    const itineraries = Itinerary.find()
+    res.render('index', {itineraries})
 })
 
-router.get('/summary', (req,res)=>{
-    res.render('tripSummary')
+// GET summary of specific itinerary
+router.get('/summary/:id', async (req,res)=>{
+    const {id} = req.params
+    itinerary = await Itinerary.findById(id)
+    res.render('tripSummary', {itinerary})
 })
 
 router.get('/create', (req,res)=>{
     res.render('tripCreator', {hotel: Hotel})
 })
 
-//create
+//GET create
+router.get('/create', async (req,res)=>{
+    const hotels = await Hotels.find()
+    res.render('tripCreator', {hotels})
+})
 
-//delete
+// DELETE itinerary
+router.delete('/:id', async (req, res) => {
+    const {id} = req.params
+    await Itinerary.findByIdAndDelete(id)
+    res.status(303).redirect('/itineraries')
+})
 
-//update
+// PUT edit update 
+router.put('/:id', async (req, res) => {
+    const {id} = req.params
+    await Itinerary.findByIdAndUpdate(id, req.body)
+    res.status(303).redirect(`/itineraries/${id}`)
+})
 
 module.exports = router
