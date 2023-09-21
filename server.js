@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 const PORT = process.env.PORT
 
 //routes
-app.use('/itinerary',itineraryRoutes)
+app.use('/itineraries',itineraryRoutes)
 app.use('/hotels', hotelController)
 app.use('/activities', activitesController)
 
