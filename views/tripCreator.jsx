@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function tripCreator ({ hotel }){
+function tripCreator ({ hotels }){
     return(
         <Default>
             <header>
@@ -11,9 +11,8 @@ function tripCreator ({ hotel }){
                 <div className="form-container">
                 <h2>Make a New trip</h2>
                 <form>
-                <label htmlFor="hotel">Baker</label>
                     <select name="hotel" id="hotel">
-                    {hotel.map(hotel => {
+                    {hotels.map(hotel => {
                         return(
                             <option key={hotel._id} value={hotel._id}>{hotel.name}</option>
                         )
