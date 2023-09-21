@@ -4,7 +4,6 @@ Activity = require('../models/Activity')
 
 //render data to the screen
 router.get('/', (req,res) =>{
-    console.log({Hotel})
     res.render('index', {hotel: Hotel})
 })
 
