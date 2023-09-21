@@ -4,14 +4,6 @@ const hotelSchema = new mongoose.Schema({
     name: {
         type: String,
     },
-    stayStartDate: {
-        type: Date,
-        // required
-    },
-    stayEndDate: {
-        type: Date,
-        // required
-    },
     price: {
         type: Number
     },
