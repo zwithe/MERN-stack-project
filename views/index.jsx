@@ -1,13 +1,17 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function Index (){
-
+function Index ({hotel}){
+    
     return(
         <Default>
+            <header>
+                <h1>Trips Planned to Date ...</h1>
+                <h2>Start with </h2>
+            </header>
             <div className="main-container">
                 <div className="trip-details">
-                    <div class="d-grid gap-2">
+                    <div className="d-grid gap-2">
                         <button class="btn btn-primary" href="/itinerary/tripCreator" type="button">Add New Trip!</button>
                     </div>
                     
