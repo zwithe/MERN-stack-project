@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function tripSummary ({hotel, activity}){
+function tripSummary (){
     return(
         <Default>
             <header>
@@ -10,10 +10,10 @@ function tripSummary ({hotel, activity}){
             <div className="main-container">
                 <div className="trip-details">
                 <div className="card">
-                    <h2>{hotel.name}</h2>
-                    <p>Location: {hotel.address}</p>
-                    <p>Check-In Date: {hotel.stayStartDate}</p>
-                    <p>Check-Out Date: {hotel.stayEndDate}</p>
+                    <h2></h2>
+                    <p>Location: </p>
+                    <p>Check-In Date:</p>
+                    <p>Check-Out Date: </p>
                 </div>
                 <div className="card">
                     <h2>Activity Name</h2>
