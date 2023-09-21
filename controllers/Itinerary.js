@@ -6,7 +6,7 @@ Itinerary = require('../models/Itinerary')
 // GET page of all itineraries
 router.get('/', (req,res) =>{
     const itineraries = Itinerary.find()
-    res.render('index', {itineraries})
+    res.render('index', {itineraries:itineraries})
 })
 
 // GET summary of specific itinerary
