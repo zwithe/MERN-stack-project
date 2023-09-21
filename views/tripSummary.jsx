@@ -10,7 +10,7 @@ function tripSummary (){
             <div className="main-container">
                 <div className="trip-details">
                 <div className="card">
-                    <h2></h2>
+                    <h2>Hotel</h2>
                     <p>Location: </p>
                     <p>Check-In Date:</p>
                     <p>Check-Out Date: </p>
