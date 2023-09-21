@@ -19,9 +19,5 @@ const itinerarySchema = new mongoose.Schema({
     }]
 })
 
-<<<<<<< HEAD
-module.exports = mongoose.model('Itinerary', itinerarySchema)
-=======
 const Itinerary = mongoose.model('Itinerary', itinerarySchema)
 module.exports = Itinerary
->>>>>>> 5175992 (began integrating data onto index page)
