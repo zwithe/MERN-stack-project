@@ -37,7 +37,7 @@ router.delete('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
     const {id} = req.params
     await Itinerary.findByIdAndUpdate(id, req.body)
-    res.status(303).redirect(`/itineraries/${id}`)
+    res.status(303).redirect(`/itineraries/summary/${id}`)
 })
 
 module.exports = router
