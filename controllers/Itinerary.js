@@ -12,7 +12,24 @@ router.get('/', (req,res) =>{
 // GET summary of specific itinerary
 router.get('/summary/:id', async (req,res)=>{
     const {id} = req.params
-    itinerary = await Itinerary.findById(id)
+    
+    itinerary = await Itinerary.findById(id).populate({
+        path: 'Days',
+        populate: {
+        path: 'activities',
+        model: 'Activity'
+        },
+        path: 'Hotel'
+    })
+    .exec((err, populatedItinerary) => {
+        if (err) {
+        console.error("Error:", err);
+        return;
+        }
+        
+        console.log(populatedItinerary);
+    });
+
     res.render('tripSummary', {itinerary})
 })
 
@@ -28,6 +45,8 @@ router.delete('/:id', async (req, res) => {
     await Itinerary.findByIdAndDelete(id)
     res.status(303).redirect('/itineraries')
 })
+
+// DELETE Day
 
 // PUT edit update 
 router.put('/:id', async (req, res) => {

@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const Day = require('./Day')
 
 const itinerarySchema = new mongoose.Schema({
-    number: {
-        type: Number
+    Name: {
+        type: String
     },
     startDate: {
         type: Date,
@@ -16,7 +16,11 @@ const itinerarySchema = new mongoose.Schema({
     Days: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Day'
-    }]
+    }],
+    Hotel: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Hotel'
+    }
 })
 
 module.exports = mongoose.model('Itinerary', itinerarySchema)
