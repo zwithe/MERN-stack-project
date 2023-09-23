@@ -1,3 +1,5 @@
+const Itinerary = require('../models/Itinerary')
+
 router = require('express').Router()
 Hotel = require('../models/Hotel')
 Activity = require('../models/Activity')
@@ -6,7 +8,7 @@ Itinerary = require('../models/Itinerary')
 // GET page of all itineraries
 router.get('/', (req,res) =>{
     const itineraries = Itinerary.find()
-    res.render('index', {itineraries})
+    res.render('index', {itineraries:itineraries})
 })
 
 // GET summary of specific itinerary
@@ -53,6 +55,11 @@ router.put('/:id', async (req, res) => {
     const {id} = req.params
     await Itinerary.findByIdAndUpdate(id, req.body)
     res.status(303).redirect(`/itineraries/summary/${id}`)
+})
+
+router.post('/', async (req, res) => {
+    await Itinerary.create(req.body)
+    res.status(303).redirect('/itineraries')
 })
 
 module.exports = router

@@ -23,4 +23,5 @@ const itinerarySchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Itinerary', itinerarySchema)
+const Itinerary = mongoose.model('Itinerary', itinerarySchema)
+module.exports = Itinerary

@@ -10,7 +10,7 @@ function tripCreator ({ hotels }){
             <div className="main-container">
                 <div className="form-container">
                 <h2>Make a New trip</h2>
-                <form>
+                <form action='/' method='POST'>
                     <select name="hotel" id="hotel">
                     {hotels.map(hotel => {
                         return(
