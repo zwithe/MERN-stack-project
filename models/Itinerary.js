@@ -7,11 +7,11 @@ const itinerarySchema = new mongoose.Schema({
     },
     startDate: {
         type: Date,
-        // required
+        required: true
     },
     endDate: {
         type: Date,
-        // required
+        required: true
     },
     Days: [{
         type: mongoose.Schema.Types.ObjectId,
