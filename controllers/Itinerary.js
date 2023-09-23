@@ -11,8 +11,6 @@ router.get('/', async (req,res) =>{
 })
 // POST create itineraries
 router.post('/', async (req, res) => {
-    console.log('hit!')
-    console.log(req.body)
     await Itinerary.create(req.body)
     
    /* if(itinerary.startDate === itinerary.endDate){
@@ -22,36 +20,6 @@ router.post('/', async (req, res) => {
     }*/
     res.status(303).redirect('/itineraries')
 })
-//GET create
-router.get('/create', async (req,res)=>{
-    const hotels = await Hotel.find()
-    res.render('tripCreator', {hotels})
-})
-
-// GET summary of specific itinerary
-router.get('/:id', async (req,res)=>{
-    const {id} = req.params
-    
-    itinerary = await Itinerary.findById(id).populate({
-        path: 'Days',
-        populate: {
-        path: 'activities',
-        model: 'Activity'
-        },
-        path: 'Hotel'
-    })
-    .exec((err, populatedItinerary) => {
-        if (err) {
-        console.error("Error:", err);
-        return;
-        }
-        
-        console.log(populatedItinerary);
-    });
-    
-    res.render('tripSummary', {itinerary})
-})
-
 //GET create
 router.get('/create', async (req,res)=>{
     const hotels = await Hotel.find()
@@ -72,6 +40,29 @@ router.put('/:id', async (req, res) => {
     const {id} = req.params
     await Itinerary.findByIdAndUpdate(id, req.body)
     res.status(303).redirect(`/itineraries/${id}`)
+})
+
+
+
+
+// GET summary of specific itinerary
+router.get('/:id', async (req,res)=>{
+    const {id} = req.params
+    
+    itinerary = await Itinerary.findById(id).populate({
+        path: 'Days',
+        populate: {
+        path: 'activities',
+        model: 'Activity'
+        },
+        path: 'Hotel'
+    }).then((populatedItinerary) =>{
+        console.log(populatedItinerary);
+    }).catch((error) => {
+        console.log(error);
+    });
+    
+    res.render('tripSummary', {itinerary})
 })
 
 // PUT add activity to day
