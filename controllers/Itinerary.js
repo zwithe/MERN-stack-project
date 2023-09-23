@@ -31,7 +31,7 @@ router.get('/summary/:id', async (req,res)=>{
         
         console.log(populatedItinerary);
     });
-
+    
     res.render('tripSummary', {itinerary})
 })
 
