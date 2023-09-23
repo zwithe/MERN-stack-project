@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function tripCreator ({  }){
+function dayView ({  }){
     return(
         <Default>
             <header>
@@ -14,4 +14,4 @@ function tripCreator ({  }){
     )
 }
 
-module.exports = tripCreator
+module.exports = dayView
