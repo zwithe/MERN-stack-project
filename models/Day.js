@@ -11,6 +11,7 @@ const daySchema = new mongoose.Schema({
         ref: 'Activity'
     }]
 });
+
 module.exports = mongoose.model('days',daySchema)
 
 
