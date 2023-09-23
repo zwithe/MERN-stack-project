@@ -11,6 +11,8 @@ function tripCreator ({ hotels }){
                 <div className="form-container">
                 <h2>Make a New trip</h2>
                 <form action='/' method='POST'>
+                    <label htmlFor='name'>Name your trip</label>
+                    <input type='text' name='name' id='name'/>
                     <select name="hotel" id="hotel">
                     {hotels.map(hotel => {
                         return(
