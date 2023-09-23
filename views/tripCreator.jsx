@@ -18,8 +18,8 @@ function tripCreator ({ hotels }){
                         )
                         })}
                     </select>
-                    <input type="date" placeholder="Check-In Date"/>
-                    <input type="date" placeholder="Check-Out Date"/>
+                    <input type="date" placeholder="Check-In Date" name="startDate" id="startDate"/>
+                    <input type="date" placeholder="Check-Out Date" name="endDate" id="endDate"/>
                     <input type="submit" className="button" value="Add Hotel"/>
                 </form>
                 </div>
