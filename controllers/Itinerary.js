@@ -1,18 +1,17 @@
-const Itinerary = require('../models/Itinerary')
-
 router = require('express').Router()
 Hotel = require('../models/Hotel')
 Activity = require('../models/Activity')
 Itinerary = require('../models/Itinerary')
+Day = require('../models/Day')
 
 // GET page of all itineraries
-router.get('/', (req,res) =>{
-    const itineraries = Itinerary.find()
-    res.render('index', {itineraries:itineraries})
+router.get('/', async (req,res) =>{
+    const itineraries = await Itinerary.find()
+    res.render('index', {itineraries})
 })
 
 // GET summary of specific itinerary
-router.get('/summary/:id', async (req,res)=>{
+router.get('/:id', async (req,res)=>{
     const {id} = req.params
     
     itinerary = await Itinerary.findById(id).populate({
@@ -50,13 +49,20 @@ router.delete('/:id', async (req, res) => {
 
 // DELETE Day
 
-// PUT edit update 
+// PUT edit itineraries 
 router.put('/:id', async (req, res) => {
     const {id} = req.params
     await Itinerary.findByIdAndUpdate(id, req.body)
     res.status(303).redirect(`/itineraries/summary/${id}`)
 })
 
+// PUT add activity to day
+router.put('/:id/day/:day', async (req, res) => {
+    const {day} = req.params['day']
+    await Day.findByIdAndUpdate(day, req.body)
+})
+
+// POST create itineraries
 router.post('/', async (req, res) => {
     await Itinerary.create(req.body)
     res.status(303).redirect('/itineraries')
