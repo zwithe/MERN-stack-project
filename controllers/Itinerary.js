@@ -1,3 +1,5 @@
+const Itinerary = require('../models/Itinerary')
+
 router = require('express').Router()
 Hotel = require('../models/Hotel')
 Activity = require('../models/Activity')
@@ -34,6 +36,11 @@ router.put('/:id', async (req, res) => {
     const {id} = req.params
     await Itinerary.findByIdAndUpdate(id, req.body)
     res.status(303).redirect(`/itineraries/summary/${id}`)
+})
+
+router.post('/', async (req, res) => {
+    await Itinerary.create(req.body)
+    res.status(303).redirect('/itineraries')
 })
 
 module.exports = router
