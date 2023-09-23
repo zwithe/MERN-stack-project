@@ -10,9 +10,10 @@ function tripCreator ({ hotels }){
             <div className="main-container">
                 <div className="form-container">
                 <h2>Make a New trip</h2>
-                <form action='/' method='POST'>
+                <form action='/itineraries' method='POST'>
                     <label htmlFor='name'>Name your trip</label>
                     <input type='text' name='name' id='name'/>
+                    <label htmlFor='hotel'>Pick a hotel</label>
                     <select name="hotel" id="hotel">
                     {hotels.map(hotel => {
                         return(
@@ -20,9 +21,11 @@ function tripCreator ({ hotels }){
                         )
                         })}
                     </select>
-                    <input type="date" placeholder="Check-In Date" name="startDate" id="startDate"/>
-                    <input type="date" placeholder="Check-Out Date" name="endDate" id="endDate"/>
-                    <input type="submit" className="button" value="Add Hotel"/>
+                    <label htmlFor='startDate'>Check in Date</label>
+                    <input type="date" name="startDate" id="startDate"/>
+                    <label htmlFor='endDate'>Check out Date</label>
+                    <input type="date" name="endDate" id="endDate"/>
+                    <input type="submit" className="button" value='Submit'/>
                 </form>
                 </div>
             </div>

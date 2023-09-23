@@ -2,11 +2,11 @@ const React = require('react')
 const Default = require('./layouts/default')
 
 function Index ({itineraries}){
-   const ItinerariesDisplay = itineraries.map((itineraries,i) =>{
+   const ItinerariesDisplay = itineraries.map(itinerary =>{
        return(
-            <li key={i}>
-                <a>
-                    {itineraries.name}
+            <li key={itinerary._id}>
+                <a href={`/itineraries/${itinerary._id}`}>
+                    {itinerary.name}
                 </a>
             </li>
         )
@@ -17,10 +17,10 @@ function Index ({itineraries}){
             <div className="main-container">
                 <div className="trip-details">
                     <div className="d-grid gap-2">
-                        <button class="btn btn-primary" href="/itinerary/tripCreator" type="button">Add New Trip!</button>
+                        <button className="btn btn-primary" href="/itinerary/tripCreator" type="button">Add New Trip!</button>
                     </div>
                 </div>
-                <ItinerariesDisplay></ItinerariesDisplay>
+                {ItinerariesDisplay}
             </div>
         </Default>
     )
