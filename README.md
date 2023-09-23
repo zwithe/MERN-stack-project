@@ -33,7 +33,7 @@ Stylish and user-friendly interface for an enjoyable planning experience.
 
 Frontend: HTML, CSS, JavaScript, React
 Backend: Node.js, Express.js (if applicable)
-Database: MongoDB, MySQL, etc. (if applicable)
+Database: MongoDB (if applicable)
 
 
 
