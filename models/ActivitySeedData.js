@@ -19,5 +19,33 @@ module.exports = [
         price: 0,
         duration: 120,
         address: '520 Ashe Ave, Raleigh, NC 27606'
-    }
+    },
+    {
+        name: 'North Carolina Museum of History',
+        type: 'museum',
+        price: 0,
+        duration: 60,
+        address: '5 E. Edenton St., Raleigh, NC 27601'
+    },
+    {
+        name: 'North Carolina Museum of Art',
+        type: 'museum',
+        price: 0,
+        duration: 60,
+        address: '2110 Blue Ridge Rd., Raleigh, NC 27607'
+    },
+    {
+        name: 'Shelley Lake Park',
+        type: 'park',
+        price: 0,
+        duration: 120,
+        address: '1400 W Millbrook Rd'
+    },
+    {
+        name: 'Anderson Point Park',
+        type: 'park',
+        price: 0,
+        duration: 120,
+        address: '20 Anderson Point Dr'
+    },
 ]

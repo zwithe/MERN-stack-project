@@ -11,13 +11,13 @@ router.get('/', async (req,res) =>{
 })
 // POST create itineraries
 router.post('/', async (req, res) => {
-    await Itinerary.create(req.body)
-    
-   /* if(itinerary.startDate === itinerary.endDate){
-        // create 1 day with this date
+    if(req.body.startDate === req.body.endDate){
+        Day.create({ date: req.body.startDate}) 
     } else {
         // a loop that creates a day for the start date and increments the day by 1 untill the end date
-    }*/
+    }
+    await Itinerary.create(req.body)
+    
     res.status(303).redirect('/itineraries')
 })
 //GET create
@@ -49,7 +49,7 @@ router.put('/:id', async (req, res) => {
 router.get('/:id', async (req,res)=>{
     const {id} = req.params
     
-    itinerary = await Itinerary.findById(id).populate({
+     const itinerary = await Itinerary.findById(id).populate({
         path: 'Days',
         populate: {
         path: 'activities',
@@ -57,7 +57,7 @@ router.get('/:id', async (req,res)=>{
         },
         path: 'Hotel'
     }).then((populatedItinerary) =>{
-        console.log(populatedItinerary);
+        console.log(populatedItinerary)
     }).catch((error) => {
         console.log(error);
     });

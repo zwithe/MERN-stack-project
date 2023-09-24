@@ -8,6 +8,9 @@ function Index ({itineraries}){
                 <a href={`/itineraries/${itinerary._id}`}>
                     {itinerary.name}
                 </a>
+                <form action={`/itineraries/${itinerary._id}?_method=DELETE`} method='POST'>
+                    <input type="submit" value="DELETE"/>
+                </form>
             </li>
         )
    })
