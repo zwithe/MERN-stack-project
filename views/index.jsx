@@ -20,7 +20,9 @@ function Index ({itineraries}){
             <div className="main-container">
                 <div className="trip-details">
                     <div className="d-grid gap-2">
-                        <button className="btn btn-primary" href="/itinerary/tripCreator" type="button">Add New Trip!</button>
+                        <a href="/itineraries/create">
+                            <button className="btn btn-primary"  type="button">Add New Trip!</button>
+                        </a>
                     </div>
                 </div>
                 {ItinerariesDisplay}

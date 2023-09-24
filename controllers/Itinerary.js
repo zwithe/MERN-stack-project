@@ -12,11 +12,20 @@ router.get('/', async (req,res) =>{
 // POST create itineraries
 router.post('/', async (req, res) => {
     if(req.body.startDate === req.body.endDate){
-        Day.create({ date: req.body.startDate}) 
+        let newDay = await Day.create({ date: req.body.startDate}); 
+        let newItinerary = await Itinerary.create(req.body);
+        newItinerary.Days.push(newDay) 
+        newItinerary.save()
     } else {
-        // a loop that creates a day for the start date and increments the day by 1 untill the end date
+        let newItinerary = await Itinerary.create(req.body);
+        let finalDate = new Date(req.body.endDate);
+        for(let iDate = new Date(req.body.startDate); iDate <= finalDate; iDate.setDate(iDate.getDate() + 1)){
+            let newDay = await Day.create({ date: iDate});
+            newItinerary.Days.push(newDay)
+        }
+        newItinerary.save()
     }
-    await Itinerary.create(req.body)
+    
     
     res.status(303).redirect('/itineraries')
 })
@@ -44,6 +53,11 @@ router.put('/:id', async (req, res) => {
 
 
 
+// PUT add activity to day
+router.put('/:id/day/:day', async (req, res) => {
+    const {day} = req.params['day']
+    await Day.findByIdAndUpdate(day, req.body)
+})
 
 // GET summary of specific itinerary
 router.get('/:id', async (req,res)=>{
@@ -62,14 +76,10 @@ router.get('/:id', async (req,res)=>{
         console.log(error);
     });
     
-    res.render('tripSummary', {itinerary})
+    res.render('tripSummary')
 })
 
-// PUT add activity to day
-router.put('/:id/day/:day', async (req, res) => {
-    const {day} = req.params['day']
-    await Day.findByIdAndUpdate(day, req.body)
-})
+
 
 
 

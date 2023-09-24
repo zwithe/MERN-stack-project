@@ -2,7 +2,7 @@ const React = require('react')
 const Default = require('./layouts/default')
 const Itinerary = require('../models/Itinerary')
 
-function tripSummary ({itinerary}){
+function tripSummary (){
     /*const activitesDisplay = itinerary.Days.activites.map(activity =>{
         return(
              <div className='card' key={activity._id}>
