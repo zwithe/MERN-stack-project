@@ -21,6 +21,13 @@ body {
     background-attachment: fixed;
     background-position: center;
   }
+
+  .delete-button{
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: center;
+  }
   
   /* Header styles */
   header {
@@ -46,6 +53,13 @@ body {
     border-bottom: 1px solid #ccc;
     padding-bottom: 20px;
     margin-bottom: 20px;
+  }
+  
+  /* remove bullets from list */
+  li {
+    list-style-type: none;
+    padding:0;
+    margin:0;
   }
   
   /* Hotel and activity card styles */
