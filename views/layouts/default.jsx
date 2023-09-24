@@ -18,13 +18,7 @@ function Default(html) {
           <div className="collapse navbar-collapse" id="idCollapse">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/itinerary"><h2>Home</h2></a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="itinerary/summary"><h2>Trip Summary</h2></a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="-1"><h2>Placeholder</h2></a>
+                <a className="nav-link" href="/itineraries"><h2>Home</h2></a>
               </li>
             </ul>
           </div>
