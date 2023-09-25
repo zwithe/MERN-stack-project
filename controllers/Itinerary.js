@@ -14,14 +14,14 @@ router.post('/', async (req, res) => {
     if(req.body.startDate === req.body.endDate){
         let newDay = await Day.create({ date: req.body.startDate}); 
         let newItinerary = await Itinerary.create(req.body);
-        newItinerary.Days.push(newDay) 
+        newItinerary.days.push(newDay) 
         newItinerary.save()
     } else {
         let newItinerary = await Itinerary.create(req.body);
         let finalDate = new Date(req.body.endDate);
         for(let iDate = new Date(req.body.startDate); iDate <= finalDate; iDate.setDate(iDate.getDate() + 1)){
             let newDay = await Day.create({ date: iDate});
-            newItinerary.Days.push(newDay)
+            newItinerary.days.push(newDay)
         }
         newItinerary.save()
     }

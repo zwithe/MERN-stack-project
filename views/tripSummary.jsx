@@ -9,7 +9,7 @@ function tripSummary ({itinerary}){
     const daysDisplay = itinerary.days.map(day =>{
         return(
              <div className='card' key={day._id}>
-                {day.date}
+                {JSON.stringify(day.date)}
                 <hr/>
                 {itinerary.days.activites.map(activity =>{
                     return(
