@@ -6,12 +6,12 @@ function tripSummary ({itinerary}){
 
     console.log(itinerary)
     
-    const daysDisplay = itinerary.Days.map(day =>{
+    const daysDisplay = itinerary.days.map(day =>{
         return(
              <div className='card' key={day._id}>
                 {day.date}
                 <hr/>
-                {itinerary.Days.activites.map(activity =>{
+                {itinerary.days.activites.map(activity =>{
                     return(
                         <div className='card' key={activity._id}>
                             <h3>{activity.name}</h3>
@@ -22,15 +22,14 @@ function tripSummary ({itinerary}){
              </div>
          )
     })
-    
     return(
         <Default>
             <header>
-                <h1>Your Trip Planning App</h1>
+                <h1>Your Trip at a Glance</h1>
             </header>
             <div className="main-container">
                 <div className="trip-details">
-                    
+                    {daysDisplay}
                 </div>
             </div>
         </Default>
