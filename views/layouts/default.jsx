@@ -11,20 +11,17 @@ function Default(html) {
     <body>
       <nav className="navbar navbar-expand-xxl bg-dark navbar-dark py-3 justify-content-between justify-content-xxl-start">
         <div className="container-fluid">
-          <a className="navbar-brand"><h1>Trip Planner</h1></a>
+          <a className="navbar-brand" href="/itineraries"><h1>Trip Planner</h1></a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#idCollapse">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="idCollapse">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/itinerary"><h2>Home</h2></a>
+                <a className="nav-link" href="itineraries/create"><h2>Start New Trip</h2></a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="itinerary/summary"><h2>Trip Summary</h2></a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="-1"><h2>Placeholder</h2></a>
+                <a className="nav-link" href="/itineraries"><h2>Planned Trips</h2></a>
               </li>
             </ul>
           </div>

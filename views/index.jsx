@@ -4,10 +4,13 @@ const Default = require('./layouts/default')
 function Index ({itineraries}){
    const ItinerariesDisplay = itineraries.map(itinerary =>{
        return(
-            <li key={itinerary._id}>
+            <li key={itinerary._id} className="form-container" >
                 <a href={`/itineraries/${itinerary._id}`}>
-                    {itinerary.name}
+                    <h2>{itinerary.name}</h2>
                 </a>
+                <form action={`/itineraries/${itinerary._id}?_method=DELETE`} method='POST'>
+                    <input type="submit" value="DELETE" className='delete-button'/>
+                </form>
             </li>
         )
    })
@@ -17,10 +20,12 @@ function Index ({itineraries}){
             <div className="main-container">
                 <div className="trip-details">
                     <div className="d-grid gap-2">
-                        <button className="btn btn-primary" href="/itinerary/tripCreator" type="button">Add New Trip!</button>
+                        <a href="/itineraries/create">
+                            <button className="btn btn-primary"  type="button"><h2>Add New Trip!</h2></button>
+                        </a>
                     </div>
                 </div>
-                {ItinerariesDisplay}
+                    {ItinerariesDisplay}                
             </div>
         </Default>
     )
