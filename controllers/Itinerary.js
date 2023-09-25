@@ -62,8 +62,9 @@ router.put('/:id/day/:day', async (req, res) => {
 
 router.get('/:id/day/:day', async (req, res) => {
     const {day} = req.params['day']
-    currentDay = Day.findById(day)
-    res.render('dayView', {currentDay})
+    currentDay = await Day.findById(day).populate({path: 'activities'})
+    let activityList = await Activity.find()
+    res.render('dayView', {currentDay, activityList})
 })
 
 // GET summary of specific itinerary
