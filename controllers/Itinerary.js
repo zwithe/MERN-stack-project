@@ -29,6 +29,7 @@ router.post('/', async (req, res) => {
     
     res.status(303).redirect('/itineraries')
 })
+
 //GET create
 router.get('/create', async (req,res)=>{
     const hotels = await Hotel.find()
@@ -57,6 +58,12 @@ router.put('/:id', async (req, res) => {
 router.put('/:id/day/:day', async (req, res) => {
     const {day} = req.params['day']
     await Day.findByIdAndUpdate(day, req.body)
+})
+
+router.get('/:id/day/:day', async (req, res) => {
+    const {day} = req.params['day']
+    currentDay = Day.findById(day)
+    res.render('dayView', {currentDay})
 })
 
 // GET summary of specific itinerary

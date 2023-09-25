@@ -2,9 +2,9 @@ const React = require('react')
 const Default = require('./layouts/default')
 const Itinerary = require('../models/Itinerary')
 
-function dayView ({Days, Activities}){
+function dayView ({Days}){
     console.log(Days)
-    console.log(Activities)
+    console.log(Days.activities)
     const daysDisplay = Days.map(Days =>{
         return(
              <li key={Days._id} className="form-container" >
