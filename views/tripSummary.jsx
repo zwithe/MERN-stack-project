@@ -22,15 +22,14 @@ function tripSummary ({itinerary}){
              </div>
         )
     })
-    
     return(
         <Default>
             <header>
-                <h1>Your Trip Planning App</h1>
+                <h1>Your Trip at a Glance</h1>
             </header>
             <div className="main-container">
                 <div className="trip-details">
-                    
+                    {daysDisplay}
                 </div>
             </div>
         </Default>
