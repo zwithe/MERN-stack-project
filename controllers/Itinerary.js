@@ -37,11 +37,29 @@ router.get('/create', async (req,res)=>{
 })
 
 // DELETE itinerary
+// DELETE itinerary
 router.delete('/:id', async (req, res) => {
-    const {id} = req.params
-    await Itinerary.findByIdAndDelete(id)
-    res.status(303).redirect('/itineraries')
-})
+    try {
+        const {id} = req.params;
+        
+
+        let itinerary = await Itinerary.findById(id);
+        if (!itinerary) {
+            return res.status(404).send('Itinerary not found');
+        }
+
+              await Promise.all(itinerary.days.map(dayId => Day.findByIdAndDelete(dayId)));
+              
+        // Delete the itinerary itself
+        await Itinerary.findByIdAndDelete(id);
+
+        res.status(303).redirect('/itineraries');
+
+    } catch (error) {
+        console.error('Error deleting itinerary:', error);
+        res.status(500).send('Internal server error');
+    }
+});
 
 // DELETE Day
 
