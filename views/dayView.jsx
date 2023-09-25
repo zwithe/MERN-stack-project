@@ -9,9 +9,12 @@ function dayView ({currentDay, activityList}){
         return(
             <div className='card' key={activity._id}>
                 <h3>{activity.name}</h3>
-                <form>
+             
                     <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars and is located at {activity.address}</p> 
-                </form>
+                    <form action={`/:id/day/${currentDay._id}?_method=PUT`} method='POST'>
+                        <input className='hidden' value={activity._id}></input>
+                        <input type='submit' value='Submit'>Add to Day</input>
+                    </form>
             </div>
         )
     })
