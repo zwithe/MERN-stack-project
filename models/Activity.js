@@ -21,6 +21,9 @@ const activtySchema = new mongoose.Schema({
     address:{
         type: String,
         required: true
+    },
+    day:{
+        type: String
     }
 })
 

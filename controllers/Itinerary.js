@@ -65,10 +65,7 @@ router.get('/:id', async (req,res)=>{
     console.log(id)
     let itinerary = await Itinerary.findById(id).populate({
         path: 'Days',
-        populate: {
-        path: 'activities',
-        model: 'Activity'
-        },
+        path: 'Activities',
         path: 'Hotel'
     }).then((populatedItinerary) =>{
         console.log(populatedItinerary)
