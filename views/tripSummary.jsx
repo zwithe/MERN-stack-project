@@ -15,18 +15,15 @@ function tripSummary ({itinerary}){
                    
                 {(JSON.stringify(day.date)).slice(1,11)}
                    <hr/>
-
-                   {itinerary.days.map(day =>{
-                        day.activities.map(activity => {
-                            console.log(activity)
+                   {day.activities.map(activity => {
                             return(
                                 <div className='card' key={activity._id}>
                                     <h3>{activity.name}</h3>
                                     <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars</p> 
                                 </div>
                             )
-                        })
-                   })}                
+                    })}
+                                
                 </div>
                 </a>
            )
