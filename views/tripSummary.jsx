@@ -46,7 +46,7 @@ function tripSummary ({itinerary}){
             <header>
                 <h1>Your "{itinerary.name}" Itinerary at a Glance</h1>
                 <h2>Hotel: {itinerary.hotel.name} </h2>
-                <h3>Hotel: {itinerary.hotel.address} </h3>
+                <h3>Address: {itinerary.hotel.address} </h3>
             </header>
             <div className="main-container">
                 <div className="trip-details">
