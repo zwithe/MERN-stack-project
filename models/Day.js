@@ -12,7 +12,7 @@ const daySchema = new mongoose.Schema({
     }]
 });
 
-module.exports = mongoose.model('Days',daySchema)
+module.exports = mongoose.model('Day',daySchema)
 
 
 

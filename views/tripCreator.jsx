@@ -5,7 +5,7 @@ function tripCreator ({ hotels }){
     return(
         <Default>
             <header>
-                <h1>Your Trip Planning App</h1>
+                <h1>Where are you headed?</h1>
             </header>
             <div className="main-container">
                 <div className="form-container">
