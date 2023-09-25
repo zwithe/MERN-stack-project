@@ -61,7 +61,9 @@ router.put('/:id/day/:day', async (req, res) => {
 })
 
 router.get('/:id/day/:day', async (req, res) => {
+    const {id} = req.params['id']
     const {day} = req.params['day']
+    itinerary = Itinerary.findById(id)
     currentDay = Day.findById(day)
     res.render('dayView', {currentDay})
 })

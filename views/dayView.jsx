@@ -13,7 +13,7 @@ function dayView ({Days}){
                     <h2>{JSON.stringify(Days.date)}</h2>
                  </a>
              </li>
-         )
+        )
     })
     return(
         <Default>
