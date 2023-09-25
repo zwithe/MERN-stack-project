@@ -10,8 +10,8 @@ function dayView ({currentDay, activityList, id}){
                 <h3>{activity.name}</h3>
              
                     <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars and is located at {activity.address}</p> 
-                    <form action={`/itineraries/${id}/day/${currentDay._id}?_method=PUT`} method='POST'>
-                        <input className='hidden' value={activity._id}/>
+                    <form action={`/itineraries/${id}/day/${currentDay._id}/activity/${activity._id}?_method=PUT`} method='POST'>
+                        
                         <input type='submit' value='Submit'/>
                     </form>
             </div>
