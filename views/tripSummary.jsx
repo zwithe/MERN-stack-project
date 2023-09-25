@@ -10,20 +10,35 @@ function tripSummary ({itinerary}){
     console.log("counter: ", counter.length)
     
     const daysDisplay = itinerary.days.map(day =>{
-        return(
-             <div className='card' key={day._id}>
+        const activityCheck = day.activities
+        console.log(activityCheck.length)
+        if (activityCheck.length != 0){
+            return(
+                <div className='card' key={day._id}>
+                   {JSON.stringify(day.date)}
+                   <hr/>
+   
+                   {itinerary.days.activites.map(activity =>{
+                       return(
+                           <div className='card' key={activity._id}>
+                               <h3>{activity.name}</h3>
+                               <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars</p> 
+                           </div>
+                       )
+                   })}                
+                </div>
+           )
+        } else {
+            return(
+                <div className='card' key={day._id}>
                 {JSON.stringify(day.date)}
                 <hr/>
-                {itinerary.days.activites.map(activity =>{
-                    return(
-                        <div className='card' key={activity._id}>
-                            <h3>{activity.name}</h3>
-                            <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars</p> 
-                        </div>
-                    )
-                })}                
+               <p>No Activities Planned</p>
              </div>
-        )
+            )
+
+        }
+
     })
     return(
         <Default>
