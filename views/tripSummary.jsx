@@ -4,14 +4,10 @@ const Itinerary = require('../models/Itinerary')
 
 function tripSummary ({itinerary}){
 
-    console.log(itinerary)
-    console.log("days: ", itinerary.days[0].activities)
-    const counter = itinerary.days[0].activities
-    console.log("counter: ", counter.length)
     
+    const counter = itinerary.days[0].activities
     const daysDisplay = itinerary.days.map(day =>{
         const activityCheck = day.activities
-        console.log(activityCheck.length)
         if (activityCheck.length != 0){
             return(
                 <a href={`${itinerary._id}/day/${day._id}`} key={day._id}>
@@ -19,14 +15,17 @@ function tripSummary ({itinerary}){
                    
                 {(JSON.stringify(day.date)).slice(1,11)}
                    <hr/>
-   
-                   {itinerary.days.activites.map(activity =>{
-                       return(
-                           <div className='card' key={activity._id}>
-                               <h3>{activity.name}</h3>
-                               <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars</p> 
-                           </div>
-                       )
+
+                   {itinerary.days.map(day =>{
+                        day.activities.map(activity => {
+                            console.log(activity)
+                            return(
+                                <div className='card' key={activity._id}>
+                                    <h3>{activity.name}</h3>
+                                    <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars</p> 
+                                </div>
+                            )
+                        })
                    })}                
                 </div>
                 </a>
