@@ -9,7 +9,7 @@ function tripSummary ({itinerary}){
     const daysDisplay = itinerary.days.map(day =>{
         return(
              <div className='card' key={day._id}>
-                {JSON.stringify(day.date)}
+                <a href={`/itineraries/${itinerary._id}/day/${day._id}`}>{JSON.stringify(day.date)}</a>
                 <hr/>
                 {itinerary.days.activites.map(activity =>{
                     return(
