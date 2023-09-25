@@ -14,14 +14,14 @@ router.post('/', async (req, res) => {
     if(req.body.startDate === req.body.endDate){
         let newDay = await Day.create({ date: req.body.startDate}); 
         let newItinerary = await Itinerary.create(req.body);
-        newItinerary.Days.push(newDay) 
+        newItinerary.days.push(newDay) 
         newItinerary.save()
     } else {
         let newItinerary = await Itinerary.create(req.body);
         let finalDate = new Date(req.body.endDate);
         for(let iDate = new Date(req.body.startDate); iDate <= finalDate; iDate.setDate(iDate.getDate() + 1)){
             let newDay = await Day.create({ date: iDate});
-            newItinerary.Days.push(newDay)
+            newItinerary.days.push(newDay)
         }
         newItinerary.save()
     }
@@ -64,8 +64,9 @@ router.get('/:id/day/:day', async (req, res) => {
     const {id} = req.params['id']
     const {day} = req.params['day']
     itinerary = Itinerary.findById(id)
-    currentDay = Day.findById(day)
-    res.render('dayView', {currentDay})
+    currentDay = await Day.findById(day).populate({path: 'activities'})
+    let activityList = await Activity.find()
+    res.render('dayView', {currentDay, activityList, itinerary})
 })
 
 // GET summary of specific itinerary
