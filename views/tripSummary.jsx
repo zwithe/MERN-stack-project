@@ -31,7 +31,7 @@ function tripSummary ({itinerary}){
         } else {
             return(
                 <div className='card' key={day._id}>
-                {JSON.stringify(day.date)}
+                {(JSON.stringify(day.date)).slice(1,11)}
                 <hr/>
                <p>No Activities Planned</p>
              </div>
