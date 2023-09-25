@@ -5,22 +5,40 @@ const Itinerary = require('../models/Itinerary')
 function tripSummary ({itinerary}){
 
     console.log(itinerary)
+    console.log("days: ", itinerary.days[0].activities)
+    const counter = itinerary.days[0].activities
+    console.log("counter: ", counter.length)
     
     const daysDisplay = itinerary.days.map(day =>{
-        return(
-             <div className='card' key={day._id}>
-                <a href={`/itineraries/${itinerary._id}/day/${day._id}`}>{JSON.stringify(day.date)}</a>
+        const activityCheck = day.activities
+        console.log(activityCheck.length)
+        if (activityCheck.length != 0){
+            return(
+                <div className='card' key={day._id}>
+                   {JSON.stringify(day.date)}
+                   <hr/>
+   
+                   {itinerary.days.activites.map(activity =>{
+                       return(
+                           <div className='card' key={activity._id}>
+                               <h3>{activity.name}</h3>
+                               <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars</p> 
+                           </div>
+                       )
+                   })}                
+                </div>
+           )
+        } else {
+            return(
+                <div className='card' key={day._id}>
+                {(JSON.stringify(day.date)).slice(1,11)}
                 <hr/>
-                {itinerary.days.activites.map(activity =>{
-                    return(
-                        <div className='card' key={activity._id}>
-                            <h3>{activity.name}</h3>
-                            <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars</p> 
-                        </div>
-                    )
-                })}                
+               <p>No Activities Planned</p>
              </div>
-        )
+            )
+
+        }
+
     })
     return(
         <Default>

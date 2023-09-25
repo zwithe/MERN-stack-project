@@ -26,7 +26,7 @@ function dayView ({currentDay, activityList}){
                     <h2>{JSON.stringify(currentDay.date)}</h2>
                  </a>
              </li>
-         )
+        )
     })
     return(
         <Default>
