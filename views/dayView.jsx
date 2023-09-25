@@ -4,7 +4,6 @@ const Itinerary = require('../models/Itinerary')
 
 function dayView ({currentDay, activityList, itinerary}){
     console.log(currentDay)
-    console.log(currentDay.activities)
     const activityDisplay = activityList.map(activity =>{
         return(
             <div className='card' key={activity._id}>

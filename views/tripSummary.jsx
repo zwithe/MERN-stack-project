@@ -14,7 +14,9 @@ function tripSummary ({itinerary}){
         console.log(activityCheck.length)
         if (activityCheck.length != 0){
             return(
-                <div className='card' key={day._id}>
+                <a href={`${itinerary._id}/day/${day._id}`} key={day._id}>
+                <div className='card'>
+                   
                    {JSON.stringify(day.date)}
                    <hr/>
    
@@ -27,14 +29,17 @@ function tripSummary ({itinerary}){
                        )
                    })}                
                 </div>
+                </a>
            )
         } else {
             return(
-                <div className='card' key={day._id}>
-                {(JSON.stringify(day.date)).slice(1,11)}
-                <hr/>
-               <p>No Activities Planned</p>
-             </div>
+                <a href={`${itinerary._id}/day/${day._id}`} key={day._id}>
+                    <div className='card' >
+                        {(JSON.stringify(day.date)).slice(1,11)}
+                        <hr/>
+                        <p>No Activities Planned</p>
+                    </div>
+                </a>
             )
 
         }
