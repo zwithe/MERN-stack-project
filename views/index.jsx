@@ -5,7 +5,7 @@ function Index ({itineraries}){
    const ItinerariesDisplay = itineraries.map(itinerary =>{
        return(
             <li key={itinerary._id} className="form-container" >
-                <a href={`/itineraries/${itinerary._id}`}>
+                <a href={`/itineraries/${itinerary._id}/day`}>
                     <h2>{itinerary.name}</h2>
                 </a>
                 <form action={`/itineraries/${itinerary._id}?_method=DELETE`} method='POST'>

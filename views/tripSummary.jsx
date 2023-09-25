@@ -3,6 +3,7 @@ const Default = require('./layouts/default')
 const Itinerary = require('../models/Itinerary')
 
 function tripSummary ({itinerary}){
+    console.log(itinerary)
     const activitesDisplay = itinerary.Activites.map(activity =>{
         return(
              <div className='card' key={activity._id}>

@@ -1,8 +1,8 @@
-const { default: mongoose } = require("mongoose");
+const mongoose = require('mongoose')
 const Day = require('./Day')
 
 
-const activtySchema = new mongoose.Schema({
+const activitySchema = new mongoose.Schema({
     name:{
         type: String,
         required: true
@@ -27,4 +27,4 @@ const activtySchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Activity', activtySchema)
+module.exports = mongoose.model('Activity', activitySchema)

@@ -1,7 +1,9 @@
 const React = require('react')
 const Default = require('./layouts/default')
-
-function dayView ({  }){
+const Itinerary = require('../models/Itinerary')
+function dayView ({Days, Activities}){
+    console.log(Days)
+    console.log(Activities)
     return(
         <Default>
             <header>

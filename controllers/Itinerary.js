@@ -4,6 +4,7 @@ const Activity = require('../models/Activity')
 const Itinerary = require('../models/Itinerary')
 const Day = require('../models/Day')
 
+
 // GET page of all itineraries
 router.get('/', async (req,res) =>{
     const itineraries = await Itinerary.find()
@@ -49,6 +50,13 @@ router.put('/:id', async (req, res) => {
     const {id} = req.params
     await Itinerary.findByIdAndUpdate(id, req.body)
     res.status(303).redirect(`/itineraries/${id}`)
+})
+
+// get 
+router.get('/:id/day', async (req, res) => {
+        const Days = await Day.find();
+        const Activities = await Activity.find()
+        res.render('dayView', {Days, Activities})
 })
 
 

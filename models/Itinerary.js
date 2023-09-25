@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
-const Day = require('./Day')
+const Activity = require('../models/Activity')
+const Day = require('../models/Day')
+const Hotel = require('../models/Hotel')
 
 const itinerarySchema = new mongoose.Schema({
     name: {
