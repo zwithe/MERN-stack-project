@@ -17,7 +17,7 @@ function tripSummary ({itinerary}){
                 <a href={`${itinerary._id}/day/${day._id}`} key={day._id}>
                 <div className='card'>
                    
-                   {JSON.stringify(day.date)}
+                {(JSON.stringify(day.date)).slice(1,11)}
                    <hr/>
    
                    {itinerary.days.activites.map(activity =>{
