@@ -56,17 +56,21 @@ router.put('/:id', async (req, res) => {
 
 // PUT add activity to day
 router.put('/:id/day/:day', async (req, res) => {
-    const {day} = req.params['day']
-    await Day.findByIdAndUpdate(day, req.body)
+    const { id, day } = req.params;
+    let currentDay = await Day.findById(day)
+    currentDay.activities.push(req.body)
+    currentDay.save()
+    res.status(303).redirect(`/itineraries/${id}`)
 })
 
 router.get('/:id/day/:day', async (req, res) => {
-    const {id} = req.params['id']
-    const {day} = req.params['day']
-    itinerary = Itinerary.findById(id)
+    const { id, day } = req.params;
+    
     currentDay = await Day.findById(day).populate({path: 'activities'})
     let activityList = await Activity.find()
-    res.render('dayView', {currentDay, activityList, itinerary})
+    console.log(currentDay)
+    console.log(id)
+    res.render('dayView', {currentDay, activityList, id})
 })
 
 // GET summary of specific itinerary
