@@ -2,7 +2,7 @@ const React = require('react')
 const Default = require('./layouts/default')
 const Itinerary = require('../models/Itinerary')
 
-function dayView ({currentDay, activityList}){
+function dayView ({currentDay, activityList, itinerary}){
     console.log(currentDay)
     console.log(currentDay.activities)
     const activityDisplay = activityList.map(activity =>{
@@ -11,7 +11,7 @@ function dayView ({currentDay, activityList}){
                 <h3>{activity.name}</h3>
              
                     <p>{activity.name} is a {activity.type}. It costs {activity.price} dollars and is located at {activity.address}</p> 
-                    <form action={`/:id/day/${currentDay._id}?_method=PUT`} method='POST'>
+                    <form action={`/${itinerary._id}/day/${currentDay._id}?_method=PUT`} method='POST'>
                         <input className='hidden' value={activity._id}></input>
                         <input type='submit' value='Submit'>Add to Day</input>
                     </form>
@@ -35,6 +35,7 @@ function dayView ({currentDay, activityList}){
             </header>
             <div className="main-container">
                 {daysDisplay}
+                {activityDisplay}
             </div>
         </Default>
     )
