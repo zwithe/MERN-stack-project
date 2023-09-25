@@ -20,6 +20,12 @@ function Default(html) {
               <li className="nav-item">
                 <a className="nav-link" href="/itineraries"><h2>Home</h2></a>
               </li>
+              <li className="nav-item">
+                <a><h2>||</h2></a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/create"><h2>Start New Trip</h2></a>
+              </li>
             </ul>
           </div>
         </div>
