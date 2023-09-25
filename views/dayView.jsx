@@ -18,7 +18,7 @@ function dayView ({Days}){
     return(
         <Default>
             <header>
-                <h1>Your Trip Planning App</h1>
+                <h1>Review Your Day</h1>
             </header>
             <div className="main-container">
                 {daysDisplay}
