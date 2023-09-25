@@ -49,19 +49,16 @@ router.put('/:id', async (req, res) => {
 router.get('/:id', async (req,res)=>{
     const {id} = req.params
     
-    itinerary = await Itinerary.findById(id).populate({
-        path: 'Days',
+    const itinerary = await Itinerary.findById(id).populate([{
+        path: 'days',
         populate: {
         path: 'activities',
         model: 'Activity'
         },
-        path: 'Hotel'
-    }).then((populatedItinerary) =>{
-        console.log(populatedItinerary);
-    }).catch((error) => {
-        console.log(error);
-    });
-    
+    },  {
+        path: 'hotel'
+    }])
+    console.log(itinerary)
     res.render('tripSummary', {itinerary})
 })
 

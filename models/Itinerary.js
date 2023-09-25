@@ -15,11 +15,11 @@ const itinerarySchema = new mongoose.Schema({
         min: this.startDate,
         required: true
     },
-    Days: [{
+    days: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Day'
     }],
-    Hotel: {
+    hotel: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Hotel'
     }
