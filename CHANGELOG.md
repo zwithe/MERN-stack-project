@@ -1,0 +1,132 @@
+- finished
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- fixed activites not displaying in days
+- fixed label on trip summary page
+- not crashing anymore
+- all crud is working trip summary breaks displaying activities
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- pages almost working
+- adding consistency to the way we render the dates on the page
+- added link to day view
+- worked on activitydisplay indayview
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- set up form for submiting activities
+- merge
+- passing itinerary into dayView
+- cleaned display of date values
+- repushing the no activities loaded logic
+- added logic to display no activities planned if there are none loaded
+- worked on dispalying activities in day view
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- fixed date in trip summary and adde link to dayview
+- added in header for day view
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- fixed day generator
+- updated data displayed on trip summary page
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- fixed imports on dayView
+- altered header for trip summary page
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- dayView page renders all day information that has been generated
+- merge
+- fixed populate function for get(:/id
+- tidying up the tripCreator function, spacing, page references
+- created new nav to create a trip, and review existing trips on landing page
+- added new navigation panel to create new trip, made edits to dayViewpage formatting
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- tried to det show page working
+- added styling effects to the landing page
+- tried to get show page working
+- reduced tabs at the top of the landing
+- days are now created and added to the itinerary automatically
+- tried to get trip summary working and added a delete button to index
+- removed console logs
+- index and tripCreator now fucntional
+- edited day view
+- filled out trip summary should work i hope
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- refactoring trip summary
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- added more routes and made the map function work in index.js
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- edited trip creator and summary
+- Update README.md
+- Update README.md
+- Create LICENSE
+- Update README.md
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- tweaked the controllers and models to look cleaner
+- added post route
+- began integrating data onto index page
+- began integrating data onto index page
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- fixed spelling for routes
+- tripCreator now fetches hotels from the database
+- fixed merge issues
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- fixed PUT redirect
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- fixed controller
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- adding in features for the index page
+- fixed controller directories
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- set up tripcreator
+- fixed controller directories
+- added in a summary page and button to lead to trip creation page
+- setup trip creator page
+- changed props to make tripSummary funtional
+- split trip summary and trip creator
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- finished day and itinerary model
+- worked on views
+- fixed address spelling
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- linked css file to default.jsx
+- adjusted hotel data model to align to bred crud model to use seed data
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- moved contents of index to trip summary
+- added nav abilities within heaheaders
+- added in default template with nav bar, similar effort in index.html may need to be ported over
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- started converting index.html to react code
+- updated references in Itinerary controller
+- deleted hello world route
+- Merge pull request #1 from zwithe/dfa
+- added hello world route
+- Merge branch 'seeder'
+- Added controller files, seeders, and basic view/seeder routes
+- added data models to controllers
+- Update Day.js
+- added in services folder to start db integration
+- Update index.html
+- Update main.css
+- Create index.html
+- added in rough front end which renders placeholder data
+- renamed controller to reflect itinerary useage
+- added export to activitiesSchema
+- Update Day.js
+- added longitude to activities schema
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- finished activities schema
+- updated hotel schema to change from stay duration to stay start and end date
+- defined hotel schema in data model
+- broke schema comments into corresponding files for team to update
+- added comment in models laying out structure for the schemas
+- localhost now renders a result, placholders will need to be updated
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- added public folder
+- added template for router in placeholder controller
+- added .env
+- fixed refrence in dev script
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- deleted second script tag
+- removed duplicate script from package.json
+- Merge branch 'main' of https://github.com/zwithe/MERN-stack-project
+- preformed npm init
+- preformed npm init
+- added in dev script to package.json file
+- started skeleton
+- intial commit
+- Initial commit
